@@ -19,4 +19,4 @@ npm run dev
 ```
 ## Live Demo
 
-You can view the live demo of the website on: [https://master--eloquent-boba-22d0ff.netlify.app](https://webdesign312.netlify.app)
+You can view the live demo of the website on:https://webdesign312.netlify.app
