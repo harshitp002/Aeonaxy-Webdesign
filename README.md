@@ -1,4 +1,4 @@
-# Web Design Internshiph Assignment
+# Web Design Internship Assignment
 
  Web Design Development internship Assignment is an assignment given by Aenoaxy Technologies Private Limited for evaluating the works of aspiring React development interns in their company.
 
