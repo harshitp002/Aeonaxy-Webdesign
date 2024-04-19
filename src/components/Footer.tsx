@@ -1,5 +1,5 @@
 
-import React from 'react';
+// import React from 'react';
 import { BsPaypal } from "react-icons/bs";
 
 const Footer = () => {

@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { FaFacebook, FaTwitter } from 'react-icons/fa';
 import { BsCheck2Circle } from "react-icons/bs";
 import { BsQrCode } from "react-icons/bs";

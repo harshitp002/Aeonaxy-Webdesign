@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef,MutableRefObject } from 'react';
 import Navigation from './Navigation';
 import { BsPaypal } from "react-icons/bs";
 import { FaCog, FaChartLine, FaWallet, FaExchangeAlt, FaHandshake, FaClipboardList, FaQuestionCircle, FaSignOutAlt } from 'react-icons/fa';
@@ -8,11 +8,15 @@ import { IoMenu } from "react-icons/io5";
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
+
 const Header = () => {
     const [isNavOpen, setIsNavOpen] = useState(false);
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [activeSubmenu, setActiveSubmenu] = useState(null);
-    const sidebarRef = useRef(null);
+    // const sidebarRef = useRef(null);
+    const sidebarRef: MutableRefObject<HTMLDivElement | null> = useRef(null);
+
+
     const subMenuItems = [
         {
             name: "Settings",
@@ -37,15 +41,19 @@ const Header = () => {
         setIsSidebarOpen(!isSidebarOpen);
     };
 
-    const handleOutsideClick = (event: { target: any; }) => {
-        if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
-            setIsSidebarOpen(false);
-            setActiveSubmenu(null);
-        }
-    };
 
 
-    const toggleSubmenu = (index: number) => {
+
+
+  const handleOutsideClick = (event: { target: any; }) => {
+    if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+      setIsSidebarOpen(false);
+      setActiveSubmenu(null);
+    }
+  };
+
+
+    const toggleSubmenu = (index: any) => {
         setActiveSubmenu(activeSubmenu === index ? null : index);
     };
 
@@ -69,8 +77,8 @@ const Header = () => {
 
     return (
         <nav className="bg-blue-900  h-20 md:h-24 py-4 px-6 md:px-40 text-base flex justify-between items-center relative z-50 ">
-           
-           {/* Desktop view { no sidebar} */}
+
+            {/* Desktop view { no sidebar} */}
             <div className="text-white font-thin flex items-center">
 
                 <Link to="/"><BsPaypal className="text-white mr-3 md:mr-8 w-8 text-3xl cursor-pointer" /></Link>
@@ -103,7 +111,7 @@ const Header = () => {
                     <Navigation />
                 </div>
             )}
-            
+
 
             {/* Sidebar  for only mobile view*/}
             <AnimatePresence>

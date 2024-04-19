@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Navigation = () => {
@@ -8,22 +8,27 @@ const Navigation = () => {
     {
       label: 'Account',
       isLink: false,
+      to: '/',
     },
     {
       label: 'Security',
       isLink: false,
+      to: '/',
     },
     {
       label: 'Data & Privacy',
       isLink: false,
+      to: '/',
     },
     {
       label: 'Payments',
       isLink: false,
+      to: '/',
     },
     {
       label: 'Notifications',
       isLink: true,
+      to: '/',
     },
     {
       label: 'Seller Tools',
@@ -33,10 +38,11 @@ const Navigation = () => {
     {
       label: 'Statements and taxes',
       isLink: false,
+      to: '/',
     },
   ];
 
-  const handleButtonClick = (index) => {
+  const handleButtonClick = (index : any) => {
     if (activeButton === index) {
       setActiveButton(null);
     } else {
@@ -57,7 +63,7 @@ const Navigation = () => {
           onClick={() => handleButtonClick(index)}
         >
           {item.isLink ? (
-            <Link to={item.to} className="">
+            <Link to = {item.to} className="">
               {item.label}
             </Link>
           ) : (

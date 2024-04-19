@@ -1,11 +1,16 @@
-import React from 'react';
+// import React from 'react';
 import { BsPaypal } from "react-icons/bs";
 import { IoIosLaptop } from "react-icons/io";
 import { TbBellRinging2Filled } from "react-icons/tb";
 import { FaFileInvoice } from "react-icons/fa";
 import { MdLocalShipping } from "react-icons/md";
 
-const SectionHeading: React.FC<{ title: string }> = ({ title }) => (
+
+interface SectionHeadingProps {
+    title: string;
+}
+
+const SectionHeading = ({ title }: SectionHeadingProps) => (
     <h2 className="text-2xl font-medium ">{title}</h2>
 );
 
